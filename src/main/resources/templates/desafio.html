@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Desafio Codenation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Desafio Codenation</h1>
+<form th:action="@{/}" th:object="${desafio}" method="post">
+    <p>TOKEN: <input type="text" th:field="*{token}"/></p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+</body>
+</html>

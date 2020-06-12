@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Desafio Codenation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Descriptografar</h1>
+<form th:action="${action}" th:object="${desafio}" method="post">
+    <p>Número de Casas: <span th:text="${desafio.numeroCasas}"></span></p>
+    <p>Texto Cifrado: <span th:text="${desafio.cifrado}"></span></p>
+    <p th:if="${desafio.decifrado != ''}">Texto Descriptografado: <span th:text="${desafio.decifrado}"></span></p>
+    <p th:if="${desafio.resumoCriptografico != null && desafio.resumoCriptografico != ''}">Resumo Criptografico: <span th:text="${desafio.resumoCriptografico}"></span></p>
+    <input type="hidden" th:field="*{token}"th:value="${desafio.token}"/>
+    <input type="hidden" th:field="*{cifrado}" th:value="${desafio.cifrado}"/>
+    <input type="hidden" th:field="*{numeroCasas}" th:value="${desafio.numeroCasas}"/>
+    <input type="hidden" th:field="*{resumoCriptografico}" th:value="${desafio.resumoCriptografico}"/>
+    <input type="hidden" th:field="*{decifrado}" th:value="${desafio.decifrado}"/>
+        <p><input type="submit" value="Descriptografar"/></p>
+
+</form>
+</body>
+</html>
+
